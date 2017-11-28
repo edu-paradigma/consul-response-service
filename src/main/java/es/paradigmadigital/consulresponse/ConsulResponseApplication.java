@@ -15,8 +15,4 @@ public class ConsulResponseApplication {
 		SpringApplication.run(ConsulResponseApplication.class, args);
 	}
 	
-	@Bean
-	public RefreshEndpoint hola(){
-		return new RefreshEndpoint(new ContextRefresher(null, null));
-	}
 }
