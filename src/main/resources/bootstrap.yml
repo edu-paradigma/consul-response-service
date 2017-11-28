@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: consul-response-service
+  cloud:
+    consul:
+      host: 172.17.0.3
+      port: 8500
+      discovery:
+        port: 8080
+        prefer-ip-address: true
+        healthCheckPath: /health
+      config:
+        watch:
+          wait-time: 10
+          delay: 1
+          enabled: true
+        format: FILES
