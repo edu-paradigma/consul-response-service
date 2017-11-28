@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RefreshScope
 @RestController
-@RequestMapping("/consul-response-service")
+@RequestMapping("/consul-response")
 public class ConsulResponseController {
 
 	@Value("${key_1}")
@@ -23,7 +23,7 @@ public class ConsulResponseController {
 	private String key3;
 
 	@GetMapping()
-	public ResponseEntity<ResponseDTO> getResponse(String name) {
+	public ResponseEntity<ResponseDTO> getResponse() {
 		ResponseEntity<ResponseDTO> response = new ResponseEntity<ResponseDTO>(
 				new ResponseDTO("Response from consul-response-service"), HttpStatus.OK);
 		return response;
